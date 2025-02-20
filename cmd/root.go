@@ -9,6 +9,7 @@ import (
 	"os"
 
 	"github.com/aria-afk/redis-clii/client"
+	"github.com/aria-afk/redis-clii/gui"
 	"github.com/spf13/cobra"
 )
 
@@ -45,5 +46,7 @@ func OpenRedis(cmd *cobra.Command, args []string) {
 		os.Exit(1)
 	}
 	// TODO: better connection message
-	fmt.Println("connected to redis@", addr)
+	fmt.Println("Succesfully connected to redis")
+	ui := gui.NewGUI(addr)
+	ui.Run()
 }
