@@ -13,6 +13,15 @@ type Redis struct {
 	ctx context.Context
 }
 
+type RedisOptions struct {
+	Host   string
+	Auth   string
+	Uri    string
+	Number int
+	Port   int
+	// TODO: TLS options
+}
+
 func NewRedis(context context.Context, address string, password string, db int) (*Redis, error) {
 	rdb := &Redis{
 		ctx: context,

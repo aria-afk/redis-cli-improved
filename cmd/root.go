@@ -4,7 +4,6 @@ Copyright © 2025 Aria Lopez <aria.lopez.dev@proton.me>
 package cmd
 
 import (
-	"context"
 	"fmt"
 	"os"
 
@@ -26,8 +25,6 @@ func Execute() {
 		os.Exit(1)
 	}
 }
-
-var ctx = context.Background()
 
 func init() {
 	rootCmd.Flags().String("addr", "localhost:6379", "Address redis is running on, default is localhost:6379")
